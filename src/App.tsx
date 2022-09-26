@@ -11,6 +11,7 @@ import { Stock } from "./components/Stock";
 import { NotFount } from "./components/NotFound";
 import { Login } from "./components/Login";
 import { ProtectedRoute } from "./components/ProtectedRouter";
+import { Recipe } from "./components/Recipe";
 
 function App() {
   return (
@@ -20,9 +21,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Navigate to="/production" />} />
 
-          <Route path="/production">
-            <Route path=":selectedProduct" element={<Production />} />
-            <Route element={<Production />} index />
+          <Route path="/production" element={<Production />}>
+            <Route path=":selectedProduct" element={<Recipe />} />
           </Route>
 
           <Route
